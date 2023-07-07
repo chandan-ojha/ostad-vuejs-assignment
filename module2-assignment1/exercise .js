@@ -10,3 +10,17 @@ function destructureExample(obj, arr) {
 
 const result = destructureExample(obj, arr);
 console.log(result);
+
+//Exercise 2: Write a function named sumNumbers that takes in multiple numbers as arguments using the rest operator. The function should return the sum of all the numbers.
+function sumNumbers(...numbers) {
+  return numbers.reduce((sum, number) => sum + number, 0);
+}
+
+console.log(sumNumbers(1, 2, 3, 4, 5));
+
+//Exercise 3: Write a function named createGreeting that takes in a name as a parameter and returns a greeting message using template literals. The message should be in the format: "Hello, [name]! Welcome to our website."
+function createGreeting(name) {
+  return `Hello, ${name}! Welcome to our website.`;
+}
+
+console.log(createGreeting("Alice"));
