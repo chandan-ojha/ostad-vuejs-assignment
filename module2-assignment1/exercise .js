@@ -34,3 +34,11 @@ console.log(isEven(7));
 
 //Exercise 5: Convert the following function to an arrow function: function multiply(a, b) {return a * b;}
 const multiply = (a, b) => a * b;
+
+//Exercise 6: Write a function named getLargestNumber that takes in two numbers as parameters. The function should return the larger number using short-circuiting and logical operators (&&, ||, ??).
+
+function getLargestNumber(num1, num2) {
+  return num1 > num2 ? num1 : num2;
+}
+
+console.log(getLargestNumber(5, 3));
