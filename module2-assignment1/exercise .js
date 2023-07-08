@@ -57,3 +57,15 @@ function doubleNumbers(numbers) {
   return numbers.map((number) => number * 2);
 }
 console.log(doubleNumbers([1, 2, 3, 4, 5]));
+
+//Exercise 9: Write a function named filterEvenNumbers that takes in an array of numbers and returns a new array with only the even numbers using the array filter method.
+function filterEvenNumbers(numbers) {
+  return numbers.filter((number) => number % 2 === 0);
+}
+console.log(filterEvenNumbers([1, 2, 3, 4, 5]));
+
+//Exercise 10: Write a function named sumArray that takes in an array of numbers and returns the sum of all the numbers using the array reduce method.
+function sumArray(numbers) {
+  return numbers.reduce((sum, number) => sum + number, 0);
+}
+console.log(sumArray([1, 2, 3, 4, 5]));
