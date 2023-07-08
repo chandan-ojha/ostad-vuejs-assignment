@@ -69,3 +69,9 @@ function sumArray(numbers) {
   return numbers.reduce((sum, number) => sum + number, 0);
 }
 console.log(sumArray([1, 2, 3, 4, 5]));
+
+//Exercise 11: Write a function named sortNumbers that takes in an array of numbers and returns a new array with the numbers sorted in ascending order using the array sort method.
+function sortNumbers(numbers) {
+  return numbers.sort((a, b) => a - b);
+}
+console.log(sortNumbers([5, 2, 8, 1, 4]));
