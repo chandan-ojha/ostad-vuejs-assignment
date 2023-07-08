@@ -51,3 +51,9 @@ function getAddressCity(address) {
 const address = { street: "123 Main St", country: "USA" };
 const city = getAddressCity(address);
 console.log(city);
+
+//Exercise 8: Write a function named doubleNumbers that takes in an array of numbers and returns a new array with each number doubled using the array map method.
+function doubleNumbers(numbers) {
+  return numbers.map((number) => number * 2);
+}
+console.log(doubleNumbers([1, 2, 3, 4, 5]));
