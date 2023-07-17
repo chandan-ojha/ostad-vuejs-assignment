@@ -51,6 +51,7 @@ const features = [
 
 const services = [
   {
+    image: "images/feature/iphone-ipad.jpg",
     icon: "ti-bookmark",
     heading: "Easy Prototyping",
     description:

@@ -167,11 +167,7 @@ const iconStyle = "text-primary h1";
         <div class="col-lg-6 align-self-center">
           <!-- Feature Image -->
           <div class="service-thumb left">
-            <img
-              class="img-fluid"
-              src="images/feature/iphone-ipad.jpg"
-              alt="iphone-ipad"
-            />
+            <img class="img-fluid" :src="services[0].image" alt="iphone-ipad" />
           </div>
         </div>
         <div class="col-lg-5 mr-auto align-self-center">
