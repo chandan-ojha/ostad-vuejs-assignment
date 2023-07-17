@@ -108,4 +108,13 @@ const testimonials = [
   },
 ];
 
-export { heros, advertisements, features, services, testimonials };
+const logos = [
+  {
+    image: "images/logo.png",
+  },
+  {
+    image: "images/logo-alt.png",
+  },
+];
+
+export { logos, heros, advertisements, features, services, testimonials };

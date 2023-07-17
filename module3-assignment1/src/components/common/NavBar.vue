@@ -1,4 +1,5 @@
 <script setup>
+import { logos } from "../../data/data";
 import { ref } from "vue";
 let activeMenu = ref(null);
 </script>
@@ -7,7 +8,7 @@ let activeMenu = ref(null);
   <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
     <div class="container">
       <a class="navbar-brand" href="/"
-        ><img src="images/logo.png" alt="logo"
+        ><img :src="logos[0].image" alt="logo"
       /></a>
       <button
         class="navbar-toggler"

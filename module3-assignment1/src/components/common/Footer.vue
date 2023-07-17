@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import { logos } from "../../data/data";
+</script>
 
 <template>
   <footer>
@@ -8,7 +10,7 @@
           <div class="col-lg-4 col-md-12 m-md-auto align-self-center">
             <div class="block">
               <a href="index.html"
-                ><img src="images/logo-alt.png" alt="footer-logo"
+                ><img :src="logos[1].image" alt="footer-logo"
               /></a>
               <!-- Social Site Icons -->
               <ul class="social-icon list-inline">
