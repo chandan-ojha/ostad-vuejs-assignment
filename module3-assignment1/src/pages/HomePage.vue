@@ -1,6 +1,9 @@
 <script setup>
 import NavBar from "../components/common/NavBar.vue";
 import Footer from "../components/common/Footer.vue";
+import { advertisements, features, services, testimonials } from "../data/data";
+
+const iconStyle = "text-primary h1";
 </script>
 
 <template>
@@ -34,27 +37,30 @@ import Footer from "../components/common/Footer.vue";
       <div class="rounded shadow p-5 bg-white">
         <div class="row">
           <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
-            <i class="ti-paint-bucket text-primary h1"></i>
-            <h3 class="mt-4 text-capitalize h5">themes made easy</h3>
+            <i :class="[advertisements[0].icon, iconStyle]"></i>
+            <h3 class="mt-4 text-capitalize h5">
+              {{ advertisements[0].title }}
+            </h3>
             <p class="regular text-muted">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              non, recusandae tempore ipsam dignissimos molestias.
+              {{ advertisements[0].description }}
             </p>
           </div>
           <div class="col-lg-4 col-md-6 mt-5 mt-md-0 text-center">
-            <i class="ti-shine text-primary h1"></i>
-            <h3 class="mt-4 text-capitalize h5">powerful design</h3>
+            <i :class="[advertisements[1].icon, iconStyle]"></i>
+            <h3 class="mt-4 text-capitalize h5">
+              {{ advertisements[1].title }}
+            </h3>
             <p class="regular text-muted">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              non, recusandae tempore ipsam dignissimos molestias.
+              {{ advertisements[1].description }}
             </p>
           </div>
           <div class="col-lg-4 col-md-12 mt-5 mt-lg-0 text-center">
-            <i class="ti-thought text-primary h1"></i>
-            <h3 class="mt-4 text-capitalize h5">creative content</h3>
+            <i :class="[advertisements[2].icon, iconStyle]"></i>
+            <h3 class="mt-4 text-capitalize h5">
+              {{ advertisements[2].title }}
+            </h3>
             <p class="regular text-muted">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-              non, recusandae tempore ipsam dignissimos molestias.
+              {{ advertisements[2].description }}
             </p>
           </div>
         </div>
@@ -69,40 +75,29 @@ import Footer from "../components/common/Footer.vue";
         <div class="col-lg-6 ml-auto justify-content-center">
           <!-- Feature Mockup -->
           <div class="image-content">
-            <img
-              class="img-fluid"
-              src="images/feature/feature-01.jpg"
-              alt="iphone"
-            />
+            <img class="img-fluid" :src="features[0].mockup" alt="iphone" />
           </div>
         </div>
         <div class="col-lg-6 mr-auto align-self-center">
           <div class="feature-content">
             <!-- Feature Title -->
-            <h2>Increase your productivity with <a href="#">Small Apps</a></h2>
+            <h2>{{ features[0].title }} <a href="#">Small Apps</a></h2>
             <!-- Feature Description -->
             <p class="desc">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {{ features[0].description }}
             </p>
           </div>
           <!-- Testimonial Quote -->
           <div class="testimonial">
             <p>
-              "InVision is a window into everything that's being designed at
-              Twitter. It gets all of our best work in one place."
+              {{ testimonials[0].quote }}
             </p>
             <ul class="list-inline meta">
               <li class="list-inline-item">
-                <img
-                  src="images/testimonial/feature-testimonial-thumb.jpg"
-                  alt=""
-                />
+                <img :src="features[0].thumbnail" alt="" />
               </li>
               <li class="list-inline-item">
-                Jonathon Andrew , Themefisher.com
+                {{ features[0].name }}
               </li>
             </ul>
           </div>
@@ -117,30 +112,23 @@ import Footer from "../components/common/Footer.vue";
         <div class="col-lg-6 ml-auto align-self-center">
           <div class="feature-content">
             <!-- Feature Title -->
-            <h2>Increase your productivity with <a href="#">Small Apps</a></h2>
+            <h2>{{ features[1].title }} <a href="#">Small Apps</a></h2>
             <!-- Feature Description -->
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {{ features[1].description }}
             </p>
           </div>
           <!-- Testimonial Quote -->
           <div class="testimonial">
             <p>
-              "InVision is a window into everything that's being designed at
-              Twitter. It gets all of our best work in one place."
+              {{ testimonials[1].quote }}
             </p>
             <ul class="list-inline meta">
               <li class="list-inline-item">
-                <img
-                  src="images/testimonial/feature-testimonial-thumb.jpg"
-                  alt=""
-                />
+                <img :src="features[1].thumbnail" alt="" />
               </li>
               <li class="list-inline-item">
-                Jonathon Andrew , Themefisher.com
+                {{ features[1].name }}
               </li>
             </ul>
           </div>
@@ -148,11 +136,7 @@ import Footer from "../components/common/Footer.vue";
         <div class="col-lg-6 mr-auto justify-content-center">
           <!-- Feature mockup -->
           <div class="image-content">
-            <img
-              class="img-fluid"
-              src="images/feature/feature-02.jpg"
-              alt="ipad"
-            />
+            <img class="img-fluid" :src="features[1].mockup" alt="ipad" />
           </div>
         </div>
       </div>
@@ -192,56 +176,48 @@ import Footer from "../components/common/Footer.vue";
                 <!-- Service 01 -->
                 <div class="service-item">
                   <!-- Icon -->
-                  <i class="ti-bookmark"></i>
+                  <i :class="services[0].icon"></i>
                   <!-- Heading -->
-                  <h3>Easy Prototyping</h3>
+                  <h3>{{ services[0].heading }}</h3>
+                  <!-- Description -->
+                  <p>{{ services[0].description }}</p>
+                </div>
+              </div>
+              <div class="col-md-6 col-xs-12">
+                <!-- Service 02 -->
+                <div class="service-item">
+                  <!-- Icon -->
+                  <i :class="services[1].icon"></i>
+                  <!-- Heading -->
+                  <h3>{{ services[1].heading }}</h3>
                   <!-- Description -->
                   <p>
-                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-                    sem. Curabitur aliquet quam id dui
+                    {{ services[1].description }}
                   </p>
                 </div>
               </div>
               <div class="col-md-6 col-xs-12">
-                <!-- Service 01 -->
+                <!-- Service 03 -->
                 <div class="service-item">
                   <!-- Icon -->
-                  <i class="ti-pulse"></i>
+                  <i :class="services[2].icon"></i>
                   <!-- Heading -->
-                  <h3>Sensor Bridge</h3>
+                  <h3>{{ services[2].heading }}</h3>
                   <!-- Description -->
                   <p>
-                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-                    sem. Curabitur aliquet quam id dui
+                    {{ services[2].description }}
                   </p>
                 </div>
               </div>
               <div class="col-md-6 col-xs-12">
-                <!-- Service 01 -->
+                <!-- Service 04 -->
                 <div class="service-item">
                   <!-- Icon -->
-                  <i class="ti-bar-chart"></i>
+                  <i :class="services[3].icon"></i>
                   <!-- Heading -->
-                  <h3>Strategist</h3>
+                  <h3>{{ services[3].heading }}</h3>
                   <!-- Description -->
-                  <p>
-                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-                    sem. Curabitur aliquet quam id dui
-                  </p>
-                </div>
-              </div>
-              <div class="col-md-6 col-xs-12">
-                <!-- Service 01 -->
-                <div class="service-item">
-                  <!-- Icon -->
-                  <i class="ti-panel"></i>
-                  <!-- Heading -->
-                  <h3>Art Direction</h3>
-                  <!-- Description -->
-                  <p>
-                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at
-                    sem. Curabitur aliquet quam id dui
-                  </p>
+                  <p>{{ services[3].description }}</p>
                 </div>
               </div>
             </div>
@@ -287,92 +263,70 @@ import Footer from "../components/common/Footer.vue";
             <div class="item">
               <div class="block shadow">
                 <!-- Speech -->
-                <p>
-                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                  Donec sollicitudin molestie malesuada. Donec sollicitudin
-                  molestie malesuada. Pellentesque in ipsum id orci porta
-                  dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Pellentesque in ipsum id orci porta dapibus. Quisque
-                  velit nisi, pretium ut lacinia in, elementum id enim.
-                </p>
+                <p>{{ testimonials[0].Speech }}</p>
                 <!-- Person Thumb -->
                 <div class="image">
-                  <img
-                    src="images/testimonial/feature-testimonial-thumb.jpg"
-                    alt="image"
-                  />
+                  <img :src="testimonials[0].image" alt="image" />
                 </div>
                 <!-- Name and Company -->
-                <cite>Abraham Linkon , Themefisher.com</cite>
+                <cite
+                  >{{ testimonials[0].name }} ,
+                  {{ testimonials[0].company }}</cite
+                >
               </div>
             </div>
-            <!-- Testimonial 01 -->
+            <!-- Testimonial 02 -->
             <div class="item">
               <div class="block shadow">
                 <!-- Speech -->
                 <p>
-                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                  Donec sollicitudin molestie malesuada. Donec sollicitudin
-                  molestie malesuada. Pellentesque in ipsum id orci porta
-                  dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Pellentesque in ipsum id orci porta dapibus. Quisque
-                  velit nisi, pretium ut lacinia in, elementum id enim.
+                  {{ testimonials[1].Speech }}
                 </p>
                 <!-- Person Thumb -->
                 <div class="image">
-                  <img
-                    src="images/testimonial/feature-testimonial-thumb.jpg"
-                    alt="image"
-                  />
+                  <img :src="testimonials[1].image" alt="image" />
                 </div>
                 <!-- Name and Company -->
-                <cite>Abraham Linkon , Themefisher.com</cite>
+                <cite
+                  >{{ testimonials[1].name }} ,
+                  {{ testimonials[1].company }}</cite
+                >
               </div>
             </div>
-            <!-- Testimonial 01 -->
+            <!-- Testimonial 03 -->
             <div class="item">
               <div class="block shadow">
                 <!-- Speech -->
                 <p>
-                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                  Donec sollicitudin molestie malesuada. Donec sollicitudin
-                  molestie malesuada. Pellentesque in ipsum id orci porta
-                  dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Pellentesque in ipsum id orci porta dapibus. Quisque
-                  velit nisi, pretium ut lacinia in, elementum id enim.
+                  {{ testimonials[2].Speech }}
                 </p>
                 <!-- Person Thumb -->
                 <div class="image">
-                  <img
-                    src="images/testimonial/feature-testimonial-thumb.jpg"
-                    alt="image"
-                  />
+                  <img :src="testimonials[2].image" alt="image" />
                 </div>
                 <!-- Name and Company -->
-                <cite>Abraham Linkon , Themefisher.com</cite>
+                <cite
+                  >{{ testimonials[2].name }} ,
+                  {{ testimonials[2].company }}</cite
+                >
               </div>
             </div>
-            <!-- Testimonial 01 -->
+            <!-- Testimonial 04 -->
             <div class="item">
               <div class="block shadow">
                 <!-- Speech -->
                 <p>
-                  Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                  Donec sollicitudin molestie malesuada. Donec sollicitudin
-                  molestie malesuada. Pellentesque in ipsum id orci porta
-                  dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Pellentesque in ipsum id orci porta dapibus. Quisque
-                  velit nisi, pretium ut lacinia in, elementum id enim.
+                  {{ testimonials[3].Speech }}
                 </p>
                 <!-- Person Thumb -->
                 <div class="image">
-                  <img
-                    src="images/testimonial/feature-testimonial-thumb.jpg"
-                    alt="image"
-                  />
+                  <img :src="testimonials[3].image" alt="image" />
                 </div>
                 <!-- Name and Company -->
-                <cite>Abraham Linkon , Themefisher.com</cite>
+                <cite
+                  >{{ testimonials[3].name }} ,
+                  {{ testimonials[3].company }}</cite
+                >
               </div>
             </div>
           </div>
