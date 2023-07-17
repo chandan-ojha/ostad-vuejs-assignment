@@ -1,3 +1,10 @@
+const heros = {
+  title: "Showcase your app with Small Apps",
+  description:
+    "Besides its beautiful design. Laapp is an incredibly rich core framework for you to showcase your App.",
+  image: "images/mobile.png",
+};
+
 const advertisements = [
   {
     icon: "ti-paint-bucket",
@@ -100,4 +107,4 @@ const testimonials = [
   },
 ];
 
-export { advertisements, features, services, testimonials };
+export { heros, advertisements, features, services, testimonials };

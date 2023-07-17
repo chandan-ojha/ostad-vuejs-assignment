@@ -1,7 +1,13 @@
 <script setup>
 import NavBar from "../components/common/NavBar.vue";
 import Footer from "../components/common/Footer.vue";
-import { advertisements, features, services, testimonials } from "../data/data";
+import {
+  heros,
+  advertisements,
+  features,
+  services,
+  testimonials,
+} from "../data/data";
 
 const iconStyle = "text-primary h1";
 </script>
@@ -16,16 +22,15 @@ const iconStyle = "text-primary h1";
       <div class="row align-items-center">
         <div class="col-md-6 order-2 order-md-1 text-center text-md-left">
           <h1 class="text-white font-weight-bold mb-4">
-            Showcase your app with Small Apps
+            {{ heros.title }}
           </h1>
           <p class="text-white mb-5">
-            Besides its beautiful design. Laapp is an incredibly rich core
-            framework for you to showcase your App.
+            {{ heros.description }}
           </p>
           <a href="#" class="btn btn-main-md">Download Now</a>
         </div>
         <div class="col-md-6 text-center order-1 order-md-2">
-          <img class="img-fluid" src="images/mobile.png" alt="screenshot" />
+          <img class="img-fluid" :src="heros.image" alt="screenshot" />
         </div>
       </div>
     </div>
