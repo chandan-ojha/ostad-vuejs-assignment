@@ -1,1 +1,1 @@
-<h3>Project Live Link -> https://vuejs-landing-page.netlify.app </h3>
+<h4 align="center"> !!! Basically, this repository create to deploy my ostad Vue.js assignment !!! </h4>
