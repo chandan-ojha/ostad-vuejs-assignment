@@ -12,17 +12,17 @@ const router = useRouter();
 function userRegister() {
   //check if password and confirm password match
   if (user.password !== user.confirmPassword) {
-    alert("Password and Confirm Password do not match");
+    alert("Password and Confirm Password do not match.");
     return;
   }
   //check if username and password are not empty
   if (user.username === "" || user.password === "") {
-    alert("Username and Password cannot be empty");
+    alert("Username and Password cannot be empty.");
     return;
   }
 
   localStorage.setItem("user", JSON.stringify(user));
-  alert("User registered successfully");
+  alert("User registered successfully!");
 
   //refresh form
   user.username = "";

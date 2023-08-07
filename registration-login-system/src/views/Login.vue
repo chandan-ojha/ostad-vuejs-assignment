@@ -12,14 +12,14 @@ const user = reactive({
 function userLogin() {
   //check if username and password are not empty
   if (user.username === "" || user.password === "") {
-    alert("Username and Password cannot be empty");
+    alert("Username and Password cannot be empty.");
     return;
   }
   //check if user exists
   const userExists = localStorage.getItem("user");
 
   if (!userExists) {
-    alert("User does not exist");
+    alert("User does not exist. Please register first!");
     return;
   }
   //check if username and password match
@@ -28,12 +28,12 @@ function userLogin() {
     userObj.username !== user.username ||
     userObj.password !== user.password
   ) {
-    alert("Username and Password do not match");
+    alert("Username and Password do not match.");
     return;
   }
   //login user
   localStorage.setItem("loggedInUser", JSON.stringify(user));
-  alert("User logged in successfully");
+  alert("User logged in successfully!");
 
   //refresh form
   user.username = "";
