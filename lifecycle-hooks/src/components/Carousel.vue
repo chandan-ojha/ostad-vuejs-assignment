@@ -35,7 +35,7 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="my-10 ml-14">
-    <input type="text" v-model="newItem" />
+    <input type="text" v-model="newItem" placeholder="enter your image link" />
     <button
       @click="addNewitem()"
       class="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
