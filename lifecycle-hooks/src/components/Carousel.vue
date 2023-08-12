@@ -34,11 +34,12 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="my-10">
+  <div class="my-10 ml-14">
     <input type="text" v-model="newItem" />
     <button
       @click="addNewitem()"
       class="ml-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      :disabled="!newItem"
     >
       Add More Image
     </button>
