@@ -1,12 +1,14 @@
-<script setup></script>
+<script setup>
+defineProps(["posts"]);
+</script>
 <template>
-  <div class="card glass m-2">
+  <div class="card glass m-2" v-for="post in posts" :key="post.id">
     <figure>
-      <img src="" alt="img" />
+      <img :src="post.img" alt="image not found" />
     </figure>
     <div class="card-body">
-      <h2 class="card-title">Blog Title</h2>
-      <p>Blog Short</p>
+      <h2 class="card-title">{{ post["title"] }}</h2>
+      <p>{{ post["short"] }}</p>
       <div class="cardActions card-actions">
         <a href="#">
           <button class="cardButton btn btn-primary">Learn More....</button>
