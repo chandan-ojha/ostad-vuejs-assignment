@@ -16,9 +16,9 @@ export const getNewestPost = async () => {
 
 //Get Post Detail
 export const getPostDetail = async (id) => {
-  let url = `https://basic-blog.teamrabbil.com/api/post-detail/${id}`;
+  let url = `https://basic-blog.teamrabbil.com/api/post-details/${id}`;
   let response = await axios.get(url);
-  return response.data;
+  return response.data["postDetails"];
 };
 
 //Get Post Category

@@ -10,9 +10,11 @@ defineProps(["posts"]);
       <h2 class="card-title">{{ post["title"] }}</h2>
       <p>{{ post["short"] }}</p>
       <div class="cardActions card-actions">
-        <a href="#">
+        <router-link
+          :to="{ name: 'blog-post-detail', params: { id: post.id } }"
+        >
           <button class="cardButton btn btn-primary">Learn More....</button>
-        </a>
+        </router-link>
       </div>
     </div>
   </div>

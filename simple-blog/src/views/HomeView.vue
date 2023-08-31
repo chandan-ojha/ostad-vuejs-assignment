@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from "vue";
-import BlogPost from "../components/common/BlogPost.vue";
+import BlogPost from "../components/Blog/BlogPost.vue";
 import {
   getPostCategory,
   getPostList,
   getNewestPost,
-} from "../service/services";
+} from "../APIRequest/SiteAPIRequest";
 
 const postList = ref([]);
 const postCategories = ref([]);

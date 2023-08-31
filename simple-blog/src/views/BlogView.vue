@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
-import BlogPost from "../components/common/BlogPost.vue";
-import { getPostList } from "../service/services";
+import BlogPost from "../components/Blog/BlogPost.vue";
+import { getPostList } from "../APIRequest/SiteAPIRequest";
 
 const postList = ref([]);
 

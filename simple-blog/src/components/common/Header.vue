@@ -2,7 +2,12 @@
 <template>
   <div class="sticky top-0 navbar bg-base-200 z-10">
     <div class="navbar-start">
-      <a class="text-cyan-700 tracking-widest text-xl font-bold">SimpleBlog</a>
+      <router-link
+        to="/"
+        class="text-cyan-700 tracking-widest text-xl font-bold"
+      >
+        SimpleBlog
+      </router-link>
     </div>
     <div class="navbar-end hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
