@@ -3,6 +3,7 @@ import { ref, onBeforeMount } from "vue";
 import axios from "axios";
 const products = ref([]);
 
+//fetch products
 onBeforeMount(() => {
   axios
     .get("https://dummyjson.com/products?limit=10")
@@ -14,6 +15,7 @@ onBeforeMount(() => {
     });
 });
 
+//load more products
 function loadMore() {
   axios
     .get("https://dummyjson.com/products?limit=10&skip=10")
@@ -43,12 +45,12 @@ function loadMore() {
       <span class="text-sm">Price: ${{ product.price }}</span>
     </div>
     <div class="mt-4 text-center">
-      <a
-        href="/product/1"
+      <router-link
+        :to="{ name: 'Product', params: { id: product.id } }"
         class="bg-blue-500 hover:bg-blue-700 text-white text-sm font-bold py-2 px-4 rounded-full"
       >
-        Details</a
-      >
+        Details
+      </router-link>
     </div>
   </div>
   <button
