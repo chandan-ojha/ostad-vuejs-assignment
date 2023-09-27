@@ -1,16 +1,15 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
+import NavBar from "./components/common/NavBar.vue";
+import Footer from "./components/common/Footer.vue";
 </script>
 
 <template>
-  <div>
-    <nav>
-      <RouterLink to="/">Home</RouterLink> <br />
-      <RouterLink to="/about">About</RouterLink>
-    </nav>
+  <NavBar />
+  <div class="container mx-auto mt-8">
+    <RouterView />
   </div>
-
-  <RouterView />
+  <Footer />
 </template>
 
 <style scoped></style>
