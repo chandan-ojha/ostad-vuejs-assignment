@@ -6,7 +6,7 @@ import Footer from "./components/common/Footer.vue";
 
 <template>
   <NavBar />
-  <div class="container mx-auto mt-8">
+  <div class="container mx-auto my-8">
     <RouterView />
   </div>
   <Footer />
