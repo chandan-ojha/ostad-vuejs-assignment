@@ -6,21 +6,27 @@ const task = reactive({
   name: "",
 });
 
-const addTask = () => {
-  tasks.value.push({ name: task.name });
-  localStorage.setItem("task_list", JSON.stringify(tasks.value));
-  task.name = "";
-};
-
 const getTask = () => {
   const taskList = JSON.parse(localStorage.getItem("task_list"));
   return taskList;
+};
+
+const addTask = () => {
+  const taskList = getTask();
+  if (taskList) {
+    tasks.value = [...taskList, task];
+    localStorage.setItem("task_list", JSON.stringify(tasks.value));
+  } else {
+    tasks.value = [task];
+    localStorage.setItem("task_list", JSON.stringify(tasks.value));
+  }
+  task.name = "";
 };
 </script>
 
 <template>
   <div class="px-96 pb-8">
-    <p>{{ tasks }}</p>
+    <p>{{ getTask() }}</p>
     <h1 class="text-3xl font-semibold mb-4 text-center">Todo App</h1>
     <div class="mb-4 flex items-center">
       <input
