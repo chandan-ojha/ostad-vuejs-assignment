@@ -11,6 +11,7 @@
         placeholder="Add a new task..."
       />
       <button
+        type="button"
         id="add-task"
         class="w-1/4 ml-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
       >
@@ -25,14 +26,14 @@
         <li class="flex justify-between items-center">
           <label class="flex items-center space-x-2">
             <input type="checkbox" class="form-checkbox" />
-            <span class="ml-2">Sample Task 1</span>
+            <span class="ml-2">Task 1</span>
           </label>
           <button class="text-red-500 hover:text-red-600">Delete</button>
         </li>
         <li class="flex justify-between items-center">
           <label class="flex items-center space-x-2">
             <input type="checkbox" class="form-checkbox" />
-            <span class="ml-2">Sample Task 2</span>
+            <span class="ml-2">Task 2</span>
           </label>
           <button class="text-red-500 hover:text-red-600">Delete</button>
         </li>
