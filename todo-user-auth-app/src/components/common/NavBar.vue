@@ -5,7 +5,7 @@ import { RouterLink } from "vue-router";
   <!-- Navigation Bar -->
   <nav class="bg-blue-500 text-white p-3 sticky top-0">
     <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-2xl font-semibold">Pinia</a>
+      <a href="/" class="text-2xl font-semibold">Pinia</a>
       <ul class="flex space-x-4">
         <li>
           <RouterLink to="/" class="hover:text-gray-300">Home</RouterLink>
