@@ -51,7 +51,6 @@ const deleteTask = (index) => {
 
 <template>
   <div class="px-96 pb-8">
-    <p>{{ taskList }}</p>
     <h1 class="text-3xl font-semibold mb-4 text-center">Todo App</h1>
     <div class="mb-4 flex items-center">
       <input
