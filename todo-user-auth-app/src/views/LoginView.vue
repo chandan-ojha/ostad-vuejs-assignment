@@ -1,5 +1,13 @@
 <script setup>
+import { reactive } from "vue";
 import { RouterLink } from "vue-router";
+import { authStore } from "../stores/authStore";
+const auth = authStore();
+
+const userData = reactive({
+  email: "",
+  password: "",
+});
 </script>
 
 <template>
@@ -12,6 +20,7 @@ import { RouterLink } from "vue-router";
             Email
           </label>
           <input
+            v-model="userData.email"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="email"
             type="email"
@@ -26,6 +35,7 @@ import { RouterLink } from "vue-router";
             Password
           </label>
           <input
+            v-model="userData.password"
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             id="password"
             type="password"
@@ -47,6 +57,7 @@ import { RouterLink } from "vue-router";
         </div>
         <div class="flex items-center justify-between mb-4">
           <button
+            @click="auth.login(userData)"
             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
           >
