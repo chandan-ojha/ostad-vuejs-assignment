@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, computed } from "vue";
 
 const taskList = JSON.parse(localStorage.getItem("task_list")) || [];
 
@@ -20,6 +20,23 @@ const addTask = () => {
   });
   localStorage.setItem("task_list", JSON.stringify(taskList));
   task.name = "";
+};
+
+//change task status
+const changeStatus = (index) => {
+  taskList[index].status = "done";
+  localStorage.setItem("task_list", JSON.stringify(taskList));
+};
+
+//completed task
+const completedTask = computed(() => {
+  return taskList.filter((task) => task.status === "done");
+});
+
+//delete task
+const deleteTask = (index) => {
+  taskList.splice(index, 1);
+  localStorage.setItem("task_list", JSON.stringify(taskList));
 };
 </script>
 
@@ -49,11 +66,21 @@ const addTask = () => {
     <!-- Incomplete Task List -->
     <div class="bg-white rounded shadow-lg p-4">
       <h2 class="text-xl font-semibold mb-2">Incomplete Tasks</h2>
-      <ul id="todo-list" class="space-y-4">
+      <ul
+        id="todo-list"
+        class="space-y-4"
+        v-for="(itask, index) in taskList"
+        :key="index"
+      >
         <li class="flex justify-between items-center">
           <label class="flex items-center space-x-2">
-            <input type="checkbox" class="form-checkbox" />
-            <span class="ml-2">Task 1</span>
+            <input
+              @click="changeStatus(index)"
+              type="checkbox"
+              class="form-checkbox"
+              :checked="itask.status === 'done'"
+            />
+            <span class="ml-2">{{ itask.name }}</span>
           </label>
         </li>
       </ul>
@@ -62,12 +89,24 @@ const addTask = () => {
     <!-- Completed Task List -->
     <div class="bg-green-100 rounded shadow-lg p-4 mt-4">
       <h2 class="text-xl font-semibold mb-2">Completed Tasks</h2>
-      <ul id="completed-list" class="space-y-4">
+      <ul
+        id="completed-list"
+        class="space-y-4"
+        v-for="(ctask, index) in completedTask"
+        :key="index"
+      >
         <li class="flex justify-between items-center">
           <label class="flex items-center space-x-2">
-            <span class="line-through ml-2 text-green-700"> Task 2 </span>
+            <span class="line-through ml-2 text-green-700">
+              {{ ctask.name }}
+            </span>
           </label>
-          <button class="text-red-500 hover:text-red-600">Delete</button>
+          <button
+            @click="deleteTask(index)"
+            class="text-red-500 hover:text-red-600"
+          >
+            Delete
+          </button>
         </li>
       </ul>
     </div>
