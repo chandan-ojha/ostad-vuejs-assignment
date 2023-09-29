@@ -22,10 +22,17 @@ const addTask = () => {
   task.name = "";
 };
 
+//incomplete task
+const incompleteTask = computed(() => {
+  return taskList.filter((task) => task.status === "undone");
+});
+
 //change task status
 const changeStatus = (index) => {
   taskList[index].status = "done";
   localStorage.setItem("task_list", JSON.stringify(taskList));
+  const listItem = document.getElementById("in-task");
+  listItem.parentNode.removeChild(listItem);
 };
 
 //completed task
@@ -37,6 +44,8 @@ const completedTask = computed(() => {
 const deleteTask = (index) => {
   taskList.splice(index, 1);
   localStorage.setItem("task_list", JSON.stringify(taskList));
+  const listItem = document.getElementById("co-task");
+  listItem.parentNode.removeChild(listItem);
 };
 </script>
 
@@ -69,16 +78,15 @@ const deleteTask = (index) => {
       <ul
         id="todo-list"
         class="space-y-4"
-        v-for="(itask, index) in taskList"
+        v-for="(itask, index) in incompleteTask"
         :key="index"
       >
-        <li class="flex justify-between items-center">
+        <li class="flex justify-between items-center" id="in-task">
           <label class="flex items-center space-x-2">
             <input
               @click="changeStatus(index)"
               type="checkbox"
               class="form-checkbox"
-              :checked="itask.status === 'done'"
             />
             <span class="ml-2">{{ itask.name }}</span>
           </label>
@@ -95,7 +103,7 @@ const deleteTask = (index) => {
         v-for="(ctask, index) in completedTask"
         :key="index"
       >
-        <li class="flex justify-between items-center">
+        <li class="flex justify-between items-center" id="co-task">
           <label class="flex items-center space-x-2">
             <span class="line-through ml-2 text-green-700">
               {{ ctask.name }}
