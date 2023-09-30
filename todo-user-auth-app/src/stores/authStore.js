@@ -48,6 +48,7 @@ const authStore = defineStore("auth", () => {
     isAuthenticated.value = false;
     localStorage.setItem("auth", 0);
     localStorage.setItem("user", "{}");
+    user.value = {};
     router.push({ name: "login" });
   }
 
