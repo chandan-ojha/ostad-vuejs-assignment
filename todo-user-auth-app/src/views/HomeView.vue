@@ -1,52 +1,13 @@
 <script setup>
-import { ref, reactive, computed } from "vue";
+import { reactive } from "vue";
+import { taskStore } from "../stores/taskStore";
 
-const taskList = JSON.parse(localStorage.getItem("task_list")) || [];
+const task = taskStore();
 
-const task = reactive({
+const taskData = reactive({
   name: "",
   status: "undone",
 });
-
-//add task
-const addTask = () => {
-  if (task.name === "") {
-    alert("Please enter a task");
-    return;
-  }
-  taskList.push({
-    name: task.name,
-    status: task.status,
-  });
-  localStorage.setItem("task_list", JSON.stringify(taskList));
-  task.name = "";
-};
-
-//incomplete task
-const incompleteTask = computed(() => {
-  return taskList.filter((task) => task.status === "undone");
-});
-
-//change task status
-const changeStatus = (index) => {
-  taskList[index].status = "done";
-  localStorage.setItem("task_list", JSON.stringify(taskList));
-  const listItem = document.getElementById("in-task");
-  listItem.parentNode.removeChild(listItem);
-};
-
-//completed task
-const completedTask = computed(() => {
-  return taskList.filter((task) => task.status === "done");
-});
-
-//delete task
-const deleteTask = (index) => {
-  taskList.splice(index, 1);
-  localStorage.setItem("task_list", JSON.stringify(taskList));
-  const listItem = document.getElementById("co-task");
-  listItem.parentNode.removeChild(listItem);
-};
 </script>
 
 <template>
@@ -54,7 +15,7 @@ const deleteTask = (index) => {
     <h1 class="text-3xl font-semibold mb-4 text-center">Todo App</h1>
     <div class="mb-4 flex items-center">
       <input
-        v-model="task.name"
+        v-model="taskData.name"
         type="text"
         id="task-input"
         class="w-3/4 border p-2"
@@ -62,7 +23,7 @@ const deleteTask = (index) => {
       />
 
       <button
-        @click="addTask"
+        @click="task.addTask(taskData)"
         type="button"
         id="add-task"
         class="w-1/4 ml-2 bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
@@ -77,13 +38,13 @@ const deleteTask = (index) => {
       <ul
         id="todo-list"
         class="space-y-4"
-        v-for="(itask, index) in incompleteTask"
+        v-for="(itask, index) in task.incompleteTask"
         :key="index"
       >
         <li class="flex justify-between items-center" id="in-task">
           <label class="flex items-center space-x-2">
             <input
-              @click="changeStatus(index)"
+              @click="task.changeStatus(index)"
               type="checkbox"
               class="form-checkbox"
             />
@@ -99,7 +60,7 @@ const deleteTask = (index) => {
       <ul
         id="completed-list"
         class="space-y-4"
-        v-for="(ctask, index) in completedTask"
+        v-for="(ctask, index) in task.completedTask"
         :key="index"
       >
         <li class="flex justify-between items-center" id="co-task">
@@ -109,7 +70,7 @@ const deleteTask = (index) => {
             </span>
           </label>
           <button
-            @click="deleteTask(index)"
+            @click="task.deleteTask(index)"
             class="text-red-500 hover:text-red-600"
           >
             Delete
