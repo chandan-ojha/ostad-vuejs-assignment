@@ -52,6 +52,12 @@ const taskData = reactive({
           </label>
         </li>
       </ul>
+      <p
+        v-if="task.incompleteTask.length === 0"
+        class="text-center text-gray-500"
+      >
+        No task added yet. Please add a new task !
+      </p>
     </div>
 
     <!-- Completed Task List -->
