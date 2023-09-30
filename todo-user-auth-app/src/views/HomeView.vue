@@ -41,7 +41,7 @@ const taskData = reactive({
         v-for="(itask, index) in task.incompleteTask"
         :key="index"
       >
-        <li class="flex justify-between items-center" id="in-task">
+        <li class="flex justify-between items-center">
           <label class="flex items-center space-x-2">
             <input
               @click="task.changeStatus(index)"
@@ -63,7 +63,7 @@ const taskData = reactive({
         v-for="(ctask, index) in task.completedTask"
         :key="index"
       >
-        <li class="flex justify-between items-center" id="co-task">
+        <li class="flex justify-between items-center">
           <label class="flex items-center space-x-2">
             <span class="line-through ml-2 text-green-700">
               {{ ctask.name }}
