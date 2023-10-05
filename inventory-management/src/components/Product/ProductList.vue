@@ -46,12 +46,15 @@ const Header = [
               >
                 <template #item-operation="Item">
                   <div class="operation-wrapper">
-                    <button class="btn btn-sm btn-white">
-                      <i class="fa fa-edit"></i>
-                    </button>
-                    <button class="btn btn-sm btn-white">
-                      <i class="fa fa-trash"></i>
-                    </button>
+                    <router-link
+                      :to="{
+                        name: 'product-detail',
+                        params: { id: Item.id },
+                      }"
+                      class="btn btn-sm btn-primary"
+                    >
+                      View
+                    </router-link>
                   </div>
                 </template>
               </EasyDataTable>
