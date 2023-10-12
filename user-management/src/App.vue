@@ -1,14 +1,16 @@
 <script setup>
-import { reactive, computed, watch } from "vue";
+import { ref, reactive, computed, watch } from "vue";
 
 const user = reactive({
-  name: "John Doe",
+  name: "Chandan Ojha",
   profileImage:
     "//flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png",
-  birthdate: "1990-01-15",
-  email: "johndoe@example.com",
-  description: "This is a sample user description.",
+  birthdate: "1999-07-06",
+  email: "chandan@gmail.com",
+  description: "Hi, I am Chandan Ojha, a full-stack software developer.",
 });
+
+const votingEligibility = ref("");
 
 //change profile image
 const changeProfileImage = () => {
@@ -17,6 +19,29 @@ const changeProfileImage = () => {
     user.profileImage = newImageURL;
   }
 };
+
+//calculate age
+const age = computed(() => {
+  return new Date().getFullYear() - new Date(user.birthdate).getFullYear();
+});
+
+//check if user is eligible for voting
+const isEligible = computed(() => {
+  return age.value >= 18;
+});
+
+//watch age and update voting eligibility
+watch(
+  age,
+  (newAge, oldAge) => {
+    if (newAge >= 18) {
+      votingEligibility.value = "You are eligible for voting!";
+    } else {
+      votingEligibility.value = "You are not eligible for voting!";
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <template>
@@ -32,7 +57,9 @@ const changeProfileImage = () => {
         />
       </div>
       <div class="mb-4">
-        <label for="userName" class="block text-gray-600">Name:</label>
+        <label for="userName" class="block text-gray-600 font-semibold">
+          Name
+        </label>
         <input
           v-model="user.name"
           id="userName"
@@ -40,7 +67,9 @@ const changeProfileImage = () => {
         />
       </div>
       <div class="mb-4">
-        <label for="birthdate" class="block text-gray-600">Birthdate:</label>
+        <label for="birthdate" class="block text-gray-600 font-semibold">
+          Birthdate
+        </label>
         <input
           v-model="user.birthdate"
           id="birthdate"
@@ -49,7 +78,9 @@ const changeProfileImage = () => {
         />
       </div>
       <div class="mb-4">
-        <label for="email" class="block text-gray-600">Email:</label>
+        <label for="email" class="block text-gray-600 font-semibold">
+          Email
+        </label>
         <input
           v-model="user.email"
           id="email"
@@ -58,9 +89,9 @@ const changeProfileImage = () => {
         />
       </div>
       <div class="mb-4">
-        <label for="description" class="block text-gray-600"
-          >Description:</label
-        >
+        <label for="description" class="block text-gray-600 font-semibold">
+          Description
+        </label>
         <textarea
           v-model="user.description"
           id="description"
@@ -68,14 +99,13 @@ const changeProfileImage = () => {
         ></textarea>
       </div>
       <div class="text-center">
-        <label class="text-gray-600">Age: {{ age }}</label>
-        <br />
-        <label class="text-gray-600">Birth Year: {{ birthYear }}</label>
+        <label class="text-gray-600 font-semibold">Age: {{ age }}</label>
         <br />
         <label
           :class="{ 'text-green-500': isEligible, 'text-red-500': !isEligible }"
-          >{{ votingEligibility }}</label
         >
+          {{ votingEligibility }}
+        </label>
       </div>
     </div>
   </div>
