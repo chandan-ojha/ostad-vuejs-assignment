@@ -9,7 +9,7 @@ const auth = authStore;
   >
     <section class="flex justify-between w-full">
       <h1>
-        Stroefront Ecommerce (<span>{{ auth.user?.name }}</span
+        Ecommerce (<span>{{ auth.user?.name }}</span
         >)
       </h1>
       <p>

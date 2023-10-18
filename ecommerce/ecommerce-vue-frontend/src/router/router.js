@@ -1,12 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 const Home = () => import("../components/Home.vue");
+const Register = () => import("../components/Register.vue");
 const Login = () => import("../components/Login.vue");
-const About = () => import("../components/About.vue");
-const Contact = () => import("../components/Contact.vue");
 const Products = () => import("../components/Products.vue");
 const Product = () => import("../components/Product.vue");
 const Sidebar = () => import("../components/Sidebar.vue");
-const Protected = () => import("../components/Protected.vue");
 const Cart = () => import("../components/Cart.vue");
 const Orders = () => import("../components/Orders.vue");
 
@@ -25,17 +23,17 @@ const routes = [
   },
 
   {
-    path: "/login",
+    path: "/register",
     components: {
-      default: Login,
+      default: Register,
       LeftSideBar: Sidebar,
     },
   },
 
   {
-    path: "/about",
+    path: "/login",
     components: {
-      default: About,
+      default: Login,
       LeftSideBar: Sidebar,
     },
   },
@@ -61,14 +59,6 @@ const routes = [
     meta: {
       requiresAuth: true,
       role: "editor",
-    },
-  },
-
-  {
-    path: "/contact",
-    components: {
-      default: Contact,
-      LeftSideBar: Sidebar,
     },
   },
 
@@ -103,17 +93,6 @@ const routes = [
       LeftSideBar: Sidebar,
     },
     name: "product",
-  },
-
-  {
-    path: "/protected",
-    components: {
-      default: Protected,
-      LeftSideBar: Sidebar,
-    },
-    meta: {
-      requiresAuth: true,
-    },
   },
 ];
 
