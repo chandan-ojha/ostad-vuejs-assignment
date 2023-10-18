@@ -8,19 +8,13 @@
 composer install
 ```
 
-2. Copy `.env.example` to `.env`
-
-```shell
-cp .env.example .env
-```
-
-3. Generate application key
+2. Generate application key
 
 ```shell
 php artisan key:generate
 ```
 
-4. Start the webserver
+3. Start the webserver
 
 ```shell
 php artisan serve
