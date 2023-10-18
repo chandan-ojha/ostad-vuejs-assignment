@@ -1,4 +1,4 @@
-# E-Commerce Backend API with Laravel
+# E-commerce Backend API with Laravel
 
 ### Getting Started
 
