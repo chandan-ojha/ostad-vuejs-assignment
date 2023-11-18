@@ -1,76 +1,129 @@
 <script setup></script>
 
 <template>
-  <div class="font-sans bg-gray-100">
-    <!-- Hero Section -->
-    <section class="bg-blue-500 text-white h-screen flex items-center">
-      <div class="container mx-auto text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4">
-          Your Product or Service Name
-        </h1>
-        <p class="text-lg md:text-xl mb-8">
-          A brief and catchy tagline to grab attention
-        </p>
-        <a
-          href="#features"
-          class="bg-white text-blue-500 font-semibold px-6 py-3 rounded-full hover:bg-blue-400 transition duration-300 ease-in-out"
-          >Learn More</a
-        >
+  <div class="bg-gray-100 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="text-2xl font-bold">Chandan Ojha</div>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-gray-300">Home</a>
+          <a href="#projects" class="hover:text-gray-300">Projects</a>
+          <a href="#contact" class="hover:text-gray-300">Contact</a>
+        </div>
       </div>
-    </section>
+    </nav>
 
-    <!-- Features Section -->
-    <section id="features" class="py-16">
-      <div class="container mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">Key Features</h2>
-        <div class="flex flex-wrap">
-          <!-- Feature 1 -->
-          <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-            <h3 class="text-xl font-semibold mb-2">Feature 1</h3>
-            <p class="text-gray-700">
-              A brief description of the first feature. Keep it concise and
-              engaging.
-            </p>
-          </div>
+    <!-- Hero Section -->
+    <header
+      class="bg-blue-500 text-white h-screen flex flex-col justify-center items-center relative"
+    >
+      <!-- Profile Image -->
+      <img
+        src="https://avatars.githubusercontent.com/u/61087593?v=4"
+        alt="Your Name"
+        class="rounded-full w-32 h-32 object-cover mb-4"
+      />
 
-          <!-- Feature 2 -->
-          <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-            <h3 class="text-xl font-semibold mb-2">Feature 2</h3>
-            <p class="text-gray-700">
-              A brief description of the second feature. Highlight its
-              importance.
-            </p>
-          </div>
+      <h3 class="text-5xl font-bold mb-4">Hi, I'm Chandan Ojha</h3>
+      <p class="text-lg">A Passionate Software Developer</p>
+      <a
+        href="#projects"
+        class="mt-8 bg-white text-blue-500 py-2 px-4 rounded-full font-semibold transition duration-300 hover:bg-blue-700 hover:text-white"
+        >View Projects</a
+      >
+    </header>
 
-          <!-- Feature 3 -->
-          <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-            <h3 class="text-xl font-semibold mb-2">Feature 3</h3>
-            <p class="text-gray-700">
-              A brief description of the third feature. Convince users of its
-              value.
-            </p>
+    <!-- Projects Section -->
+    <section id="projects" class="py-16">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8">Projects</h2>
+        <!-- Example project card (repeat for each project) -->
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-2">Project Name</h3>
+              <p class="text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                hendrerit turpis in aliquam facilisis.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-blue-500 hover:underline"
+                >Github Link</a
+              >
+            </div>
           </div>
+          <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-2">Project Name</h3>
+              <p class="text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                hendrerit turpis in aliquam facilisis.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-blue-500 hover:underline"
+                >Github Link</a
+              >
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-bold mb-2">Project Name</h3>
+              <p class="text-gray-700">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+                hendrerit turpis in aliquam facilisis.
+              </p>
+              <a
+                href="#"
+                class="mt-4 inline-block text-blue-500 hover:underline"
+                >Github Link</a
+              >
+            </div>
+          </div>
+          <!-- Repeat similar code for other projects -->
         </div>
       </div>
     </section>
 
-    <!-- Call-to-Action Section -->
-    <section class="bg-gray-800 text-white py-16">
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-200 py-16">
       <div class="container mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Ready to Get Started?
-        </h2>
-        <p class="text-lg mb-8">
-          Sign up now and experience the benefits of our amazing product or
-          service.
+        <h2 class="text-3xl font-bold mb-8">Contact</h2>
+        <p class="text-gray-700 mb-6">
+          Feel free to reach out to me through the following channels:
         </p>
-        <a
-          href="#signup"
-          class="bg-blue-500 text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-400 transition duration-300 ease-in-out"
-          >Sign Up</a
-        >
+
+        <!-- Icon links -->
+        <div class="flex justify-center space-x-4 mb-8">
+          <a href="mailto:your@email.com" class="text-blue-500 hover:underline">
+            <i class="fas fa-envelope"></i> Email
+          </a>
+          <a
+            href="https://www.linkedin.com/in/your-profile"
+            class="text-blue-500 hover:underline"
+          >
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a
+            href="https://github.com/your-username"
+            class="text-blue-500 hover:underline"
+          >
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+
+        <!-- Additional content goes here -->
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4">
+      <div class="container mx-auto text-center">
+        &copy; 2023 Chandan Ojha. All rights reserved.
+      </div>
+    </footer>
   </div>
 </template>
 
