@@ -1,22 +1,15 @@
-<script setup></script>
+<script setup>
+import NavBar from "./components/common/NavBar.vue";
+import Footer from "./components/common/Footer.vue";
+import Skills from "./components/Skills.vue";
+import Educations from "./components/Educations.vue";
+import Experiences from "./components/Experiences.vue";
+</script>
 
 <template>
   <div class="bg-gray-100 font-sans">
     <!-- Navigation -->
-    <nav class="bg-gray-800 text-white p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <div class="text-2xl font-bold">Chandan Ojha</div>
-        <div class="flex space-x-4">
-          <a href="#" class="hover:text-gray-300">Home</a>
-          <a href="#about" class="hover:text-gray-300">About</a>
-          <a href="#education-experience" class="hover:text-gray-300">
-            Experience</a
-          >
-          <a href="#projects" class="hover:text-gray-300">Projects</a>
-          <a href="#contact" class="hover:text-gray-300">Contact</a>
-        </div>
-      </div>
-    </nav>
+    <NavBar />
 
     <!-- Hero Section -->
     <header
@@ -85,139 +78,7 @@
               </p>
             </div>
             <!-- Skills -->
-            <div class="w-2/4 p-2 m-2">
-              <h3 class="text-lg font-semibold mb-2">Skills</h3>
-              <div>
-                <div class="mb-4">
-                  <p class="text-gray-600">PHP</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-blue-500 rounded-full"
-                          style="width: 75%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-blue-500"
-                      >75%</span
-                    >
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <p class="text-gray-600">Laravel</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-red-500 rounded-full"
-                          style="width: 80%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-red-500"
-                      >80%</span
-                    >
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <p class="text-gray-600">MySQL</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-purple-500 rounded-full"
-                          style="width: 70%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-purple-500"
-                      >70%</span
-                    >
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <p class="text-gray-600">Tailwind CSS</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-cyan-500 rounded-full"
-                          style="width: 40%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-cyan-500"
-                      >40%</span
-                    >
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <p class="text-gray-600">JavaScript</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-yellow-500 rounded-full"
-                          style="width: 70%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-yellow-500"
-                      >70%</span
-                    >
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <p class="text-gray-600">Vue.js</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-green-500 rounded-full"
-                          style="width: 80%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-green-500"
-                      >80%</span
-                    >
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <p class="text-gray-600">Inertia.js</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-sky-500 rounded-full"
-                          style="width: 80%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-sky-500"
-                      >80%</span
-                    >
-                  </div>
-                </div>
-                <div class="mb-4">
-                  <p class="text-gray-600">Nuxt.js</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex-1">
-                      <div class="h-2 bg-gray-200 rounded-full">
-                        <div
-                          class="h-full text-center text-xs text-white bg-green-500 rounded-full"
-                          style="width: 30%"
-                        ></div>
-                      </div>
-                    </div>
-                    <span class="ml-2 text-xs font-semibold text-green-500"
-                      >30%</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Skills />
           </div>
         </div>
       </div>
@@ -229,104 +90,10 @@
         Education & Experience
       </h3>
       <div class="container mx-auto flex">
-        <!-- Education Card -->
-        <div class="w-1/2 pr-4">
-          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h3 class="text-xl font-bold mb-2">Education</h3>
-            <!-- Education Item 1 -->
-            <div class="flex items-center mb-4">
-              <i
-                class="fas fa-graduation-cap text-blue-500 text-2xl mt-1 mr-3"
-              ></i>
-              <div>
-                <p class="text-gray-700 font-semibold">
-                  B.Sc in Software Engineering
-                </p>
-                <p class="text-gray-500">Daffodil International University</p>
-                <p class="text-gray-500">Session: 2018-2021</p>
-                <p class="text-gray-500">Result: CGPA- 3.80 out of 4.00</p>
-              </div>
-            </div>
-            <!-- Education Item 2 -->
-            <div class="flex items-center mb-4">
-              <i
-                class="fas fa-graduation-cap text-blue-500 text-2xl mt-1 mr-3"
-              ></i>
-              <div>
-                <p class="text-gray-700 font-semibold">HSC in Science</p>
-                <p class="text-gray-500">Shahid Smriti College,Shashikar</p>
-                <p class="text-gray-500">Session: 2015-2017</p>
-                <p class="text-gray-500">Result: GPA- 4.25 out of 5.00</p>
-              </div>
-            </div>
-            <!-- Education Item 3 -->
-            <div class="flex items-center mb-4">
-              <i
-                class="fas fa-graduation-cap text-blue-500 text-2xl mt-1 mr-3"
-              ></i>
-              <div>
-                <p class="text-gray-700 font-semibold">SSC in Science</p>
-                <p class="text-gray-500">Bahadurpur Secondary School</p>
-                <p class="text-gray-500">Session: 2014-2015</p>
-                <p class="text-gray-500">Result: GPA- 4.89 out of 5.00</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Experience Card -->
-        <div class="w-1/2 pl-4">
-          <div class="bg-white p-6 rounded-lg shadow-md mb-8">
-            <h3 class="text-xl font-bold mb-2">Experience</h3>
-            <!-- Experience Item 1 -->
-            <div class="flex items-start mb-4">
-              <i class="fas fa-briefcase text-green-500 text-xl mt-1 mr-3"></i>
-              <div>
-                <p class="text-gray-700 font-semibold">
-                  Junior Software Engineer
-                </p>
-                <p class="text-gray-500">
-                  MononSoft Ltd A Sister Concern of JMI Group
-                </p>
-                <p class="text-gray-500">June 2022 - Present</p>
-                <ul class="list-disc pl-6">
-                  <li>
-                    Developing an ERP system based on Laravel, Vue.js and
-                    Oracale Database.
-                  </li>
-                  <li>Developing software solutions to meet customer needs.</li>
-                  <li>
-                    Creating and implementing the source code of new
-                    applications.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <!-- Experience Item 2 -->
-            <div class="flex items-start mb-4">
-              <i class="fas fa-briefcase text-green-500 text-xl mt-1 mr-3"></i>
-              <div>
-                <p class="text-gray-700 font-semibold">
-                  Internship Junior Software Developer
-                </p>
-                <p class="text-gray-500">Bugsbd Limited</p>
-                <p class="text-gray-500">July 2021 - December 2021</p>
-                <ul class="list-disc pl-6">
-                  <li>
-                    Assisting the development manager with all aspects of
-                    software design and coding.
-                  </li>
-                  <li>
-                    Attending and contributing to company development meetings.
-                  </li>
-                  <li>
-                    Learning the codebase and improving your coding skills.
-                  </li>
-                  <li>Writing and maintaining code.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Educations -->
+        <Educations />
+        <!-- Experiences-->
+        <Experiences />
       </div>
     </section>
 
@@ -492,11 +259,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4">
-      <div class="container mx-auto text-center">
-        &copy; 2023 Chandan Ojha. All rights reserved.
-      </div>
-    </footer>
+    <Footer />
   </div>
 </template>
 
