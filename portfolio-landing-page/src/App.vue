@@ -1,14 +1,15 @@
 <script setup>
 import NavBar from "./components/common/NavBar.vue";
 import Footer from "./components/common/Footer.vue";
-import Skills from "./components/Skills.vue";
-import Educations from "./components/Educations.vue";
-import Experiences from "./components/Experiences.vue";
+import Skills from "./components/skill/Skills.vue";
+import Educations from "./components/education/Educations.vue";
+import Experiences from "./components/experience/Experiences.vue";
+import Projects from "./components/project/Projects.vue";
 </script>
 
 <template>
   <div class="bg-gray-100 font-sans">
-    <!-- Navigation -->
+    <!-- NavBar -->
     <NavBar />
 
     <!-- Hero Section -->
@@ -103,124 +104,8 @@ import Experiences from "./components/Experiences.vue";
         <h3 class="text-3xl font-bold mb-8 text-center">
           Open Source Projects
         </h3>
-        <div class="flex flex-wrap -mx-4">
-          <!-- Project Item 1 -->
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h3 class="text-xl font-bold mb-2">E-commerce</h3>
-              <p class="text-gray-700 text-justify">
-                Modern E-commerce application built with Laravel and Livewire.
-              </p>
-              <!-- Tools & Technologies -->
-              <div class="mt-4 flex space-x-2">
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Laravel
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Livewire
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >PHP
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >MySQL
-                </span>
-              </div>
-              <!-- Github Link -->
-              <a
-                href="https://github.com/chandan-ojha/laravel-livewire-ecommerce"
-                target="_blank"
-                class="mt-4 inline-block text-blue-500 hover:underline"
-                >Github Link</a
-              >
-            </div>
-          </div>
-          <!-- Project Item 2 -->
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h3 class="text-xl font-bold mb-2">Barta App</h3>
-              <p class="text-gray-700 text-justify">
-                Barta App is a social media application built with Laravel,
-                Vue.js and Inertia.js.
-              </p>
-              <!-- Tools & Technologies -->
-              <div class="mt-4 flex space-x-2">
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Laravel
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                >
-                  PHP
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >MySQL
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Tailwind CSS
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Vue.js
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Inertia.js
-                </span>
-              </div>
-              <!-- Github Link -->
-              <a
-                href="https://github.com/chandan-ojha/barta-app"
-                target="_blank"
-                class="mt-4 inline-block text-blue-500 hover:underline"
-                >Github Link</a
-              >
-            </div>
-          </div>
-          <!-- Project Item 3 -->
-          <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8">
-            <div class="bg-white p-6 rounded-lg shadow-md">
-              <h3 class="text-xl font-bold mb-2">Pharmacy Management System</h3>
-              <p class="text-gray-700 text-justify">
-                Pharmacy Management System is a web application built with
-                Laravel and Vue.js.
-              </p>
-              <!-- Tools & Technologies -->
-              <div class="mt-4 flex space-x-2">
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Laravel
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >PHP
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >MySQL
-                </span>
-                <span
-                  class="bg-gray-200 px-2 py-1 text-sm text-gray-600 rounded-full"
-                  >Vue.js
-                </span>
-              </div>
-              <!-- Github Link -->
-              <a
-                href="https://github.com/chandan-ojha/pharmacy-management"
-                target="_blank"
-                class="mt-4 inline-block text-blue-500 hover:underline"
-                >Github Link</a
-              >
-            </div>
-          </div>
-        </div>
+        <!-- Projects -->
+        <Projects />
       </div>
     </section>
 

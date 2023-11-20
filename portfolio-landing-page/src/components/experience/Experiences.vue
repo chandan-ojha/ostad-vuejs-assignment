@@ -1,6 +1,6 @@
 <script setup>
 import Experience from "./Experience.vue";
-import { experiences } from "../data/experiences.js";
+import { experiences } from "../../data/experiences.js";
 </script>
 
 <template>
